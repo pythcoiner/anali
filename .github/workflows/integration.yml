@@ -18,13 +18,16 @@ jobs:
       matrix:
         include:
           - USE_MIN_BITCOIN_VERSION: 'TRUE'
-          - USE_TAPROOT: 0
+            USE_TAPROOT: 0
             BITCOIN_BACKEND_TYPE: 'bitcoind'
-          - USE_TAPROOT: 1
+          - USE_MIN_BITCOIN_VERSION: 'TRUE'
+            USE_TAPROOT: 1
             BITCOIN_BACKEND_TYPE: 'bitcoind'
-          - USE_TAPROOT: 0
+          - USE_MIN_BITCOIN_VERSION: 'TRUE'
+            USE_TAPROOT: 0
             BITCOIN_BACKEND_TYPE: 'electrs'
-          - USE_TAPROOT: 1
+          - USE_MIN_BITCOIN_VERSION: 'TRUE'
+            USE_TAPROOT: 1
             BITCOIN_BACKEND_TYPE: 'electrs'
 
     env:

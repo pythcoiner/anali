@@ -49,6 +49,10 @@ jobs:
       #     apt update
       #     apt install -y python3 python3-pip unzip curl
 
+      - name: cleanup /tmp 
+        run: |
+          find /tmp -maxdepth 1 -type d -name 'lianad*' -mtime +0 -exec rm -rf {} +
+
       - name: Setup Python dependencies
         run: |
           pip install --break-system-packages -r tests/requirements.txt
